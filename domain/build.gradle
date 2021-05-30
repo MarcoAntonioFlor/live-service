@@ -1,0 +1,10 @@
+dependencies {
+    // compile
+    implementation "javax.inject:javax.inject:1"
+
+    implementation "io.projectreactor:reactor-core:${project.ext.reactorCore}"
+
+    // testCompile
+    testImplementation "org.mockito:mockito-core:$mockito"
+    testImplementation "io.projectreactor:reactor-test:${project.ext.reactorTest}"
+}

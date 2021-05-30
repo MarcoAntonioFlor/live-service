@@ -1,0 +1,44 @@
+ext {
+    commonsLang3 = "3.12.0"
+    jupiter = "5.7.1"
+    jupiterPlatform = "1.7.1"
+    javaxInject = "1"
+    lombok = "1.18.20"
+    metrics = "0.0.13"
+    mockito = "3.0.0"
+    mockitoJupiter = "2.23.0"
+    mqClient = "0.1.11"
+    newRelic = "6.4.2"
+    reactorTest = "3.4.4"
+    reactorCore = "3.4.4"
+    reactorExtra = "3.4.2"
+    resilience4j = "1.7.0"
+    resilience4jreactor = "1.7.0"
+    guava="30.1.1-jre"
+    resilience = "0.0.1"
+    swagger = "2.9.2"
+    wiremock = "2.11.0"
+}
+
+dependencies {
+    // annotationProcessor
+    annotationProcessor "org.projectlombok:lombok:$lombok"
+
+    // compileOnly
+    compileOnly "org.projectlombok:lombok:$lombok"
+
+    // compile
+    implementation "org.apache.commons:commons-lang3:$commonsLang3"
+
+    // testCompile
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$jupiter"
+    testImplementation "org.junit.platform:junit-platform-runner:$jupiterPlatform"
+    testImplementation "org.junit.platform:junit-platform-commons:$jupiterPlatform"
+
+    testImplementation "org.mockito:mockito-junit-jupiter:$mockitoJupiter"
+
+    testImplementation "org.projectlombok:lombok:$lombok"
+
+    // testRuntimeOnly
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$jupiter"
+}
