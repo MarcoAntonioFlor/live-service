@@ -1,22 +1,21 @@
 package com.liveshop.liveservice.domain;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Builder;
 import lombok.Value;
 
-@Builder
+@Builder(toBuilder = true)
 @Value
 public class Live {
-
   private String id;
-  private LocalDate createAt;
-  private LocalDate updateAt;
+  private String description;
+  private Image image;
   private LocalDateTime liveAt;
-  private List<String> influencers;
-  private List<String> brands;
-  private List<String> topics;
+  private List<String> presenters;
+  private List<Company> companies;
+  private List<Topic> topics;
   private boolean isPrivate;
-
+  private boolean isHighlight;
+  private boolean published;
 }
