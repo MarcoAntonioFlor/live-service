@@ -1,7 +1,6 @@
 package com.liveshop.liveservice.entrypoint.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import java.awt.Image;
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.validation.constraints.NotEmpty;
@@ -17,8 +16,6 @@ public class LiveRequest {
   @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
   private LocalDateTime liveAt;
 
-  @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-  private LocalDateTime liveFinish;
 
   @NotEmpty
   private List<CompanyRequest> companies;

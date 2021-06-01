@@ -5,10 +5,12 @@ import com.liveshop.liveservice.domain.Image;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.Data;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 @Data
 public class CompanyRequest {
 
+  @CNPJ
   private String cnpj;
   private String companyName;
   private String businessName;

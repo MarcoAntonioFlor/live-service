@@ -5,21 +5,25 @@ import lombok.Data;
 
 @Data
 class AddressRequest{
-  private String city;
   private String street;
-  private String district;
-  private String complement;
   private String number;
+  private String complement;
+  private String neighborhood;
   private String zipCode;
+  private String city;
+  private String state;
+  private String country;
 
   public static Address toAddress(final AddressRequest address){
     return Address.builder()
-        .city(address.getCity())
         .street(address.getStreet())
-        .district(address.getDistrict())
-        .complement(address.getComplement())
         .number(address.getNumber())
+        .complement(address.getComplement())
+        .neighborhood(address.getNeighborhood())
         .zipCode(address.getZipCode())
+        .city(address.getCity())
+        .state(address.getState())
+        .country(address.getCountry())
         .build();
   }
 }

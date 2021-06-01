@@ -1,4 +1,6 @@
 spring:
+  jackson:
+    property-naming-strategy: com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy
   data:
     mongodb:
       uri: mongodb+srv://app:FMwGXfVRS2RLgsu3Qsc9ty5q@cluster0.bmwsa.mongodb.net/podelive?retryWrites=true&w=majority

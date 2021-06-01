@@ -7,10 +7,12 @@ import lombok.Value;
 @Builder
 @Value
 public class Address{
-  private String city;
   private String street;
-  private String district;
-  private String complement;
   private String number;
+  private String complement;
+  private String neighborhood;
   private String zipCode;
+  private String city;
+  private String state;
+  private String country;
 }
