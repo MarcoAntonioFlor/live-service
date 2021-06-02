@@ -7,12 +7,12 @@ import java.util.stream.Collectors;
 import lombok.Data;
 
 @Data
-public class TopicRequest {
+public class TopicJson {
   private String name;
   private String description;
-  private List<ImageRequest> images;
+  private List<ImageJson> images;
 
-  public static Topic toTopic(final TopicRequest topic){
+  public static Topic toTopic(final TopicJson topic){
     return Topic.builder()
         .name(topic.getName())
         .description(topic.getDescription())
@@ -20,9 +20,9 @@ public class TopicRequest {
         .build();
   }
 
-  private static List<Image> buidImages(final List<ImageRequest> images){
+  private static List<Image> buidImages(final List<ImageJson> images){
     return images.stream()
-        .map(ImageRequest::toImage)
+        .map(ImageJson::toImage)
         .collect(Collectors.toList());
   }
 }

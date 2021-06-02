@@ -8,30 +8,30 @@ import lombok.Data;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 @Data
-public class CompanyRequest {
+public class CompanyJson {
 
   @CNPJ
   private String cnpj;
   private String companyName;
   private String businessName;
   private String brand;
-  private List<ImageRequest> images;
-  private AddressRequest address;
+  private List<ImageJson> images;
+  private AddressJson address;
 
-  public static Company toCompany(final CompanyRequest company){
+  public static Company toCompany(final CompanyJson company){
     return Company.builder()
         .cnpj(company.getCnpj())
         .companyName(company.getCompanyName())
         .businessName(company.getBusinessName())
         .brand(company.getBrand())
         .images(buidImages(company.getImages()))
-        .address(AddressRequest.toAddress(company.getAddress()))
+        .address(AddressJson.toAddress(company.getAddress()))
         .build();
   }
 
-  private static List<Image> buidImages(final List<ImageRequest> images){
+  private static List<Image> buidImages(final List<ImageJson> images){
     return images.stream()
-        .map(ImageRequest::toImage)
+        .map(ImageJson::toImage)
         .collect(Collectors.toList());
   }
 }

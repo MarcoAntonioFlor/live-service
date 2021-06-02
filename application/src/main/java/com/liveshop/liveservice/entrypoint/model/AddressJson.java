@@ -4,7 +4,7 @@ import com.liveshop.liveservice.domain.Address;
 import lombok.Data;
 
 @Data
-class AddressRequest{
+class AddressJson {
   private String street;
   private String number;
   private String complement;
@@ -14,7 +14,7 @@ class AddressRequest{
   private String state;
   private String country;
 
-  public static Address toAddress(final AddressRequest address){
+  public static Address toAddress(final AddressJson address){
     return Address.builder()
         .street(address.getStreet())
         .number(address.getNumber())

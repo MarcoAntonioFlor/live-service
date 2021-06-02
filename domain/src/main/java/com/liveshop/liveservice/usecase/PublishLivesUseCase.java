@@ -1,13 +1,11 @@
 package com.liveshop.liveservice.usecase;
 
 import com.liveshop.liveservice.domain.Live;
-import com.liveshop.liveservice.gateway.FindLivesGateway;
 import com.liveshop.liveservice.gateway.PublishLiveGateway;
+import com.liveshop.liveservice.gateway.SearchLivesGateway;
 import com.liveshop.liveservice.gateway.UpdateLiveGateway;
-import java.util.List;
+import com.liveshop.liveservice.usecase.SearchLivesUseCase.Input;
 import javax.inject.Named;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 
@@ -17,10 +15,10 @@ public class PublishLivesUseCase {
 
   private final UpdateLiveGateway updateLiveGateway;
   private final PublishLiveGateway publishLiveGateway;
-  private final FindLivesGateway findLivesGateway;
+  private final SearchLivesGateway searchLivesGateway;
 
   public Flux<Live> execute(final Input input){
-    return findLivesGateway.execute(input.getIds())
+    return searchLivesGateway.execute(input)
         .doOnNext(live -> publishLiveGateway.execute(live.getId()))
         .map(this::updateToPublished)
         .doOnNext(live -> updateLiveGateway.execute(live));
@@ -31,11 +29,4 @@ public class PublishLivesUseCase {
         .published(true)
         .build();
   }
-
-  @Data
-  @AllArgsConstructor(staticName = "of")
-  public static class Input{
-    private List<String> ids;
-  }
-
 }

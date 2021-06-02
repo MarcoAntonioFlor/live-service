@@ -21,7 +21,8 @@ public class LiveData {
 
   @Id
   private String id;
-
+  private String description;
+  private ImageData image;
   @CreatedDate
   private LocalDate createAt;
   @LastModifiedDate
@@ -34,10 +35,29 @@ public class LiveData {
   private boolean isHighlight;
   private boolean published;
 
+  /**
+   *  private String id;
+   *   private String description;
+   *   private Image image;
+   *   private LocalDateTime liveAt;
+   *   private List<String> presenters;
+   *   private List<Company> companies;
+   *   private List<Topic> topics;
+   *   private boolean isPrivate;
+   *   private boolean isHighlight;
+   *   private boolean published;
+   * @param live
+   * @return
+   */
+
+
+
 
   public static LiveData toLiveData(final Live live){
     return LiveData.builder()
         .id(live.getId())
+        .description(live.getDescription())
+        .image(ImageData.toImageData(live.getImage()))
         .liveAt(live.getLiveAt())
         .presenters(live.getPresenters())
         .companies(buidCompaniesData(live.getCompanies()))
@@ -49,8 +69,11 @@ public class LiveData {
   }
 
   public static Live toLive(final LiveData live){
+    System.out.println(live.toString());
     return Live.builder()
         .id(live.getId())
+        .description(live.getDescription())
+        .image(ImageData.toImage(live.getImage()))
         .liveAt(live.getLiveAt())
         .presenters(live.getPresenters())
         .companies(buidCompanies(live.getCompanies()))

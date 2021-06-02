@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class PubilishLiveQueueGateway implements PublishLiveGateway {
+public class PublishLiveQueueGateway implements PublishLiveGateway {
 
   public void execute(final String id){
     log.info("publish live {}", id);
