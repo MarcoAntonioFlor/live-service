@@ -7,3 +7,35 @@ spring:
       database: live-shopping
 server:
   port: 8082
+
+
+security:
+  allow-credentials: true
+  allowed-origins:
+    - http://localhost:8082
+  allowed-public-apis:
+    - /**
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+    - OPTIONS
+  allowed-headers:
+    - Authorization
+    - Origin
+    - Content-Type
+    - Accept
+    - Accept-Encoding
+    - Accept-Language
+    - Access-Control-Allow-Origin
+    - Access-Control-Allow-Headers
+    - Access-Control-Request-Method
+    - X-Requested-With
+    - X-Auth-Token
+    - X-Xsrf-Token
+    - Cache-Control
+    - Id-Token
+  exposed-headers:
+    - X-Xsrf-Tokens

@@ -2,10 +2,12 @@ package com.liveshop.liveservice.gateway.database.model;
 
 import com.liveshop.liveservice.domain.Company;
 import com.liveshop.liveservice.domain.Image;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.Builder;
 import lombok.Value;
+import org.apache.commons.lang3.ObjectUtils;
 
 @Builder
 @Value
@@ -41,7 +43,8 @@ public class CompanyData {
   }
 
   private static List<ImageData> buidImagesData(final List<Image> images){
-    return images.stream()
+    return ObjectUtils.defaultIfNull(images, new ArrayList<Image>())
+        .stream()
         .map(ImageData::toImageData)
         .collect(Collectors.toList());
   }

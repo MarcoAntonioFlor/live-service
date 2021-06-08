@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "podeliveshop-dsv-314100",
+  "private_key_id": "fe2547d9f1cb942809ee332a9f1447863c92dbde",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDO6YTgD9MCYhjM\nGEFihwyteu0Z/dEJr16FNF4fA3tUrcVTHA++8NUJdn4mtj+kfXAtpuvNe1R5VSEl\nK4mSI/TacwyZjghBPg5BmK5Ebnx/0aFg35YEeUI62XyimqxC58+JqTl3uyAk0wIM\ne1SzO8lrCadtRrx9t55iUgYISQDpqfAC5fz/KbETEFbCaepp4v/8HRz5mnxtguuz\nfV+G1ICR5M5CVN+jKJBt3Su0ZFc3cyY/oQXd5f8+NLG8rQviYQ7um2Md/G/eyYxh\nKL5bFWvqW/TMmzFxi/fr6gc3q8BtICKfE0qDFbDbF0xiiHMT5UVMo+p4Y1YKd7u6\nKUhKkzyVAgMBAAECggEAGwlZcvuuW1PdIKIUvR6fcfWrkKdhTq4rICW5HL1UOrrg\nG12B0zXd6HgiwMU0qLY5V8XFbxqr7ZTJmXVIax+mqXq6DUCJZJkKvNiKAOgc/Yiz\nWRiuHhSIKm9rwUWLt8xZiofhufrqFtW5oU7mQOtRhNqElZtWGulI2VkVb7S2WVG+\nnKlOsvzkn0GjiYgaDA4Q+Cm8ufK3YC0KxURhW7FsB08FSuhLM7ZeYQ0Wo867A9Qz\npRttre+Gnigj3iP6YRCjdjotm9q4KUUy7ZtNUmOI3BQBiOimqd2V64MzEr66QJCU\nD7TYiKFHIZUVLpEh1cfuTsRx7lAXL3fi8uzpfQFGoQKBgQDtve4gE8J/PDSnOjol\nmTrFm+qF2nXcD/qFfhblynYl6E7yr2/fOFhse9TN10yaEQ0csiJKHfgQWB+h52gf\nTg3BsGp5JK7htq1NuVqA0sRzkMdNHdG+XTAOYkIgg791pmcaZ0CmXvCU6QJRABFW\nVFlnlkpcbkpi/76wVwU91zKWsQKBgQDezXfUa7Tue6C5rQ6dGIUKrCr4d4rTTvoL\nSm0rCW2BAoylsQKu9H09oIbb12bYM9wH7d9EvpfOWnQBZpM/JW6QhiwiwdMAyWjI\ngQabtXYERj46JwvT5EvlMzpSLK/kBU/FOzf19nEyhSAvN4cUK9DMufWgjR+lUJ0U\nsKVdwPIFJQKBgBKUn4G+SZssF2licZzyptc+4ktn0YJLdWbtfdijxCweRd1NvM6T\nVsXTv8P+qav43S969JcaVILigEZlEYwwy35xzUB+j3RwlIbYj6w1zMjDbfAm/neE\nTPcy0rw7z8DgKnqzyye1j9PzigzOloxKt1oTMuiabhHirwKVKoG0ye1hAoGAWBoR\nh1rr2d3jCWkIPVCj0zuPZl8G81XohCxzDLCWr4wNh7t+Hyaom4TtruL3VQj0ueHz\nBqEDMGMOOjuQgEjR9q5Hp5rTUB1UpOx4a3wO5dPM6XvlLm25ITHnnvTyvIzpJUms\ncEN6MYr41hL0BCLrVvk1yr3jRKCi7LqJOZCBY00CgYEAs585YlAXn3Xyud6Ek9ZD\nK/e/DYJL3daMFjXx/c7E6JQbzTu3sA9CaQQGu/0BllIcc7Pq1THCze6kaVSr2QS7\n2iZwavL7xePyKDtNWdh3M2baU3x/OAqcBKHJgssSmuvoGsDL0Izm8jsIJjIwaA2n\nMZWwIbfJod2AhO6ssVQ4lJw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-56z5p@podeliveshop-dsv-314100.iam.gserviceaccount.com",
+  "client_id": "110067603874740599570",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-56z5p%40podeliveshop-dsv-314100.iam.gserviceaccount.com"
+}

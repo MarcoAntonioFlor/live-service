@@ -30,17 +30,14 @@ public class SearchLivesDatabaseGateway implements SearchLivesGateway {
     Criteria criteria = new Criteria();
 
     if (isNotEmpty(input.getIds())) {
-      criteria = criteria.where("id") .in(input.getIds());
-    }else{
-      criteria = criteria.where("id").exists(true);
+      criteria = criteria.and("id").in(input.getIds());
     }
-
     if (isNotEmpty(input.getIsPrivate())) {
-      criteria = criteria.and("private").is(input.getIsPrivate());
+      criteria = criteria.and("isPrivate").is(input.getIsPrivate());
     }
 
     if (isNotEmpty(input.getIsHighlight())) {
-      criteria = criteria.and("highlight").is(input.getIsHighlight());
+      criteria = criteria.and("isHighlight").is(input.getIsHighlight());
     }
 
     if (isNotEmpty(input.getPublished())) {
@@ -48,15 +45,11 @@ public class SearchLivesDatabaseGateway implements SearchLivesGateway {
     }
 
     if (isNotEmpty(input.getCompanyName())) {
-      criteria = criteria.and("companies.company_name").is(input.getCompanyName());
-    }
-
-    if (isNotEmpty(input.getCompanyName())) {
-      criteria = criteria.and("companies.company_name").is(input.getCompanyName());
+      criteria = criteria.and("companies.companyName").is(input.getCompanyName());
     }
 
     if (isNotEmpty(input.getPresenter())) {
-      criteria = criteria.and("presenters").is(input.getPresenter());
+      criteria = criteria.and("presenters").in(input.getPresenter());
     }
 
     if (isNotEmpty(input.getTopicName())) {
@@ -67,7 +60,6 @@ public class SearchLivesDatabaseGateway implements SearchLivesGateway {
       criteria = criteria.and("status").is(input.getPresenter());
     }
 
-    System.out.println(criteria.getKey());
     return new Query(criteria);
   }
 

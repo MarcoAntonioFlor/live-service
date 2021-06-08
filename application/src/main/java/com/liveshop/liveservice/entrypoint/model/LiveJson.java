@@ -1,9 +1,6 @@
 package com.liveshop.liveservice.entrypoint.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.liveshop.liveservice.entrypoint.model.CompanyJson;
-import com.liveshop.liveservice.entrypoint.model.ImageJson;
-import com.liveshop.liveservice.entrypoint.model.TopicJson;
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.validation.constraints.NotEmpty;
@@ -18,7 +15,7 @@ public class LiveJson {
   @PastOrPresent
   @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
   private LocalDateTime liveAt;
-  
+
   @NotEmpty
   private List<CompanyJson> companies;
 

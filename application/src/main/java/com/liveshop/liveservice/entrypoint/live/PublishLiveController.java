@@ -28,7 +28,11 @@ public class PublishLiveController {
   @PostMapping("/publish")
   @ResponseStatus(HttpStatus.OK)
   public Flux<Live> publish(@RequestBody @Valid final PublishRequest request) {
-    return publishLivesUseCase.execute(Input.builder().ids(request.getIds()).build());
+    return publishLivesUseCase.execute(
+        Input.builder()
+            .ids(request.getIds())
+            .build()
+    );
   }
 
 }

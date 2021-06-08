@@ -1,5 +1,6 @@
 package com.liveshop.liveservice.domain;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Builder;
@@ -12,6 +13,8 @@ public class Live {
   private String description;
   private Image image;
   private LocalDateTime liveAt;
+  private LocalDateTime createAt;
+  private LocalDateTime updateAt;
   private List<String> presenters;
   private List<Company> companies;
   private List<Topic> topics;

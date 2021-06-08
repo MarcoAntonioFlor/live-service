@@ -27,6 +27,7 @@ public class PublishLivesUseCase {
   private Live updateToPublished(final Live live){
     return live.toBuilder()
         .published(true)
+        .createAt(live.getCreateAt())
         .build();
   }
 }
