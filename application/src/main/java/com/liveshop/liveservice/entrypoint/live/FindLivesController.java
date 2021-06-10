@@ -40,7 +40,7 @@ public class FindLivesController {
       @RequestParam(value = "company_name", required = false) final String companyName,
       @RequestParam(value = "status", required = false) final String status){
 
-    log.info("user: {}", user.getEmail());
+    log.info("user: {}", user);
 
     final Input input = Input.of(
         ids,

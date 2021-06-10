@@ -3,13 +3,13 @@ package com.liveshop.liveservice.configuration;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import java.io.IOException;
-import java.io.InputStream;
+import com.google.firebase.messaging.FirebaseMessaging;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.SneakyThrows;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 
@@ -21,19 +21,22 @@ public class FirebaseConfig {
 
   @Primary
   @Bean
-  public void firebaseLoad() {
+  @SneakyThrows
+  public FirebaseApp loadFireBaseApp() {
+    GoogleCredentials googleCredentials = GoogleCredentials
+        .fromStream(new ClassPathResource("firebase_config.json").getInputStream());
 
-    try (InputStream inputStream = new ClassPathResource("firebase_config.json").getInputStream()){
-      FirebaseOptions options = new FirebaseOptions.Builder()
-          .setCredentials(GoogleCredentials.fromStream(inputStream))
-          .build();
+    FirebaseOptions firebaseOptions = FirebaseOptions
+        .builder()
+        .setCredentials(googleCredentials)
+        .build();
 
-      if (FirebaseApp.getApps().isEmpty()) {
-        FirebaseApp.initializeApp(options);
-      }
-      System.out.println("Firebase Initialize");
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    return FirebaseApp.initializeApp(firebaseOptions);
+  }
+
+  @Bean
+  @DependsOn(value = "loadFireBaseApp")
+  public FirebaseMessaging loadFirebaseMessaging() {
+    return FirebaseMessaging.getInstance();
   }
 }
